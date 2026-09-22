@@ -27,29 +27,6 @@ const materiais = [
         revisão mensal do equipamento instalado.
       </p>
     </div>
-
-    <div class="sobre__ficha" aria-label="Dados da empresa">
-      <div class="sobre__ficha-linha">
-        <span class="dado">DENOMINAÇÃO SOCIAL</span>
-        <strong>FITPRO TECH — Unipessoal, Lda.</strong>
-      </div>
-      <div class="sobre__ficha-linha">
-        <span class="dado">SEDE</span>
-        <strong>Eiras, Coimbra · 3020-430</strong>
-      </div>
-      <div class="sobre__ficha-linha">
-        <span class="dado">ESTRUTURA JURÍDICA</span>
-        <strong>Unipessoal por Quotas</strong>
-      </div>
-      <div class="sobre__ficha-linha">
-        <span class="dado">CAE PRINCIPAL</span>
-        <strong>46642 — Comércio por Grosso de Máquinas e Equipamentos</strong>
-      </div>
-      <div class="sobre__ficha-linha">
-        <span class="dado">CAE SECUNDÁRIOS</span>
-        <strong>3320 · 3319 · 7020</strong>
-      </div>
-    </div>
   </div>
 
   <div class="wrap materiais">
@@ -70,8 +47,8 @@ const materiais = [
 
   .sobre__grelha {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 64px;
+    grid-template-columns: 1fr;
+    max-width: 62ch;
     padding-bottom: 80px;
   }
 
@@ -84,37 +61,6 @@ const materiais = [
 
   .sobre__texto p {
     color: var(--prata);
-  }
-
-  .sobre__ficha {
-    background: var(--preto);
-    padding: 34px;
-    align-self: start;
-    border-left: 4px solid var(--vermelho);
-  }
-
-  .sobre__ficha-linha {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--aco-linha);
-  }
-  .sobre__ficha-linha:first-child {
-    padding-top: 0;
-  }
-  .sobre__ficha-linha:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .sobre__ficha-linha .dado {
-    color: var(--aco);
-  }
-  .sobre__ficha-linha strong {
-    font-family: var(--f-corpo);
-    font-weight: 500;
-    color: var(--osso);
-    font-size: 0.98rem;
   }
 
   .materiais {
