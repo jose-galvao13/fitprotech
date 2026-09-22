@@ -2,6 +2,7 @@
 ---
 <section class="hero">
   <div class="hero__grelha" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
 
   <svg class="hero__chevron" viewBox="0 0 600 800" preserveAspectRatio="none" aria-hidden="true">
     <polygon points="0,0 260,400 0,800 160,800 420,400 160,0" fill="#c41e2e" opacity="0.9" />
@@ -48,6 +49,18 @@
     mask-image: linear-gradient(to bottom, black, transparent 85%);
   }
 
+  .hero__glow {
+    position: absolute;
+    top: -12%;
+    left: -6%;
+    width: 58%;
+    height: 68%;
+    background: radial-gradient(circle, rgba(196, 30, 46, 0.38) 0%, rgba(196, 30, 46, 0.14) 45%, transparent 72%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
   .hero__chevron {
     position: absolute;
     top: 0;
@@ -88,6 +101,11 @@
     .hero__chevron {
       width: 70%;
       opacity: 0.55;
+    }
+    .hero__glow {
+      width: 85%;
+      height: 50%;
+      opacity: 0.7;
     }
   }
 </style>
