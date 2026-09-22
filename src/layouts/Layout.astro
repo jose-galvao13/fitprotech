@@ -15,6 +15,7 @@ const {
 // astro.config.mjs (necessário para o GitHub Pages em repositórios de projeto).
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const logoSrc = `${base}/img/logo.jpg`;
+const faviconSrc = `${base}/img/logo-icone.jpg`;
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ const logoSrc = `${base}/img/logo.jpg`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpeg" href={logoSrc} />
+    <link rel="icon" type="image/jpeg" href={faviconSrc} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0b0b0c" />
