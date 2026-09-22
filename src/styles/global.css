@@ -15,8 +15,8 @@
   --aco: #4b4e54;
   --aco-linha: #34363a;
   --prata: #c9cdd1;
-  --osso: #f3f2ee;
-  --osso-2: #e9e7e1;
+  --osso: #f4f5f6;
+  --osso-2: #dcdee0;
   --vermelho: #c41e2e;
   --vermelho-escuro: #8c1420;
   --vermelho-luz: #e23a4a;
@@ -52,8 +52,8 @@ html {
 body {
   margin: 0;
   font-family: var(--f-corpo);
-  color: var(--preto);
-  background: var(--osso);
+  color: var(--osso);
+  background: var(--preto);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -135,12 +135,12 @@ button {
 
 .botao--fantasma {
   border-color: var(--aco);
-  color: var(--preto);
+  color: var(--osso);
 }
 .botao--fantasma:hover {
-  border-color: var(--preto);
-  background: var(--preto);
-  color: var(--osso);
+  border-color: var(--osso);
+  background: var(--osso);
+  color: var(--preto);
 }
 
 .botao--fantasma-claro {

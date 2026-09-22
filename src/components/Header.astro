@@ -5,18 +5,15 @@ const links = [
   { href: '#como-trabalhamos', label: 'Como trabalhamos' },
   { href: '#contacto', label: 'Contacto' },
 ];
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const logoSrc = `${base}/img/logo.jpg`;
 ---
 
 <header class="header" id="topo">
   <div class="wrap header__linha">
     <a href="#topo" class="header__marca" aria-label="FITPRO TECH — início">
-      <svg class="header__chevron" viewBox="0 0 40 40" aria-hidden="true">
-        <polygon points="0,4 16,20 0,36 8,36 24,20 8,4" fill="#c41e2e" />
-        <polygon points="14,4 30,20 14,36 22,36 38,20 22,4" fill="#c9cdd1" />
-      </svg>
-      <span class="header__texto">
-        <strong>FITPRO</strong>&nbsp;TECH
-      </span>
+      <img src={logoSrc} alt="FITPRO TECH — Gym Engineering & Maintenance Solutions" class="header__logo" />
     </a>
 
     <nav class="header__nav" aria-label="Navegação principal">
@@ -63,24 +60,13 @@ const links = [
   .header__marca {
     display: flex;
     align-items: center;
-    gap: 10px;
     flex-shrink: 0;
   }
 
-  .header__chevron {
-    width: 26px;
-    height: 26px;
-  }
-
-  .header__texto {
-    font-family: var(--f-display);
-    font-size: 1.35rem;
-    letter-spacing: 0.01em;
-    color: var(--osso);
-  }
-  .header__texto strong {
-    color: var(--osso);
-    font-weight: 800;
+  .header__logo {
+    height: 42px;
+    width: auto;
+    display: block;
   }
 
   .header__nav {
