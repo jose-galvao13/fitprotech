@@ -1,0 +1,92 @@
+---
+/*
+  PLACEHOLDER — Secção de projetos/portefólio.
+  Substituir os 3 blocos abaixo por fotos reais de instalações concluídas
+  (ex.: /img/projetos/nome-do-projeto.jpg) quando existirem.
+  Cada bloco aceita: imagem, título do projeto e localização/tipo de espaço.
+*/
+const projetos = [
+  { titulo: '[Nome do projeto]', local: '[Ginásio / Box / Hotel — Localidade]' },
+  { titulo: '[Nome do projeto]', local: '[Ginásio / Box / Hotel — Localidade]' },
+  { titulo: '[Nome do projeto]', local: '[Ginásio / Box / Hotel — Localidade]' },
+];
+---
+
+<section class="proj" id="projetos">
+  <div class="wrap">
+    <span class="olho">PROJETOS</span>
+    <h2 class="proj__titulo">Alguns espaços que já equipámos.</h2>
+
+    <div class="proj__grelha">
+      {projetos.map((p) => (
+        <div class="proj__item">
+          <div class="proj__imagem">
+            <span>Foto do projeto</span>
+          </div>
+          <strong>{p.titulo}</strong>
+          <span class="dado">{p.local}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .proj {
+    background: var(--osso);
+    padding: 96px 0;
+    border-top: 1px solid #d9d6cd;
+  }
+
+  .proj__titulo {
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    margin: 10px 0 48px;
+    color: var(--preto);
+  }
+
+  .proj__grelha {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .proj__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .proj__imagem {
+    aspect-ratio: 4 / 3;
+    border: 1.5px dashed var(--aco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--osso-2);
+    margin-bottom: 6px;
+  }
+
+  .proj__imagem span {
+    font-family: var(--f-tecnico);
+    font-size: 0.78rem;
+    color: var(--aco);
+  }
+
+  .proj__item strong {
+    font-family: var(--f-corpo);
+    font-weight: 600;
+    color: var(--preto);
+  }
+
+  @media (max-width: 860px) {
+    .proj__grelha {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .proj {
+      padding: 56px 0;
+    }
+  }
+</style>

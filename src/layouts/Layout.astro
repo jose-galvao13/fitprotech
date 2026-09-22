@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'FITPRO TECH — Engenharia e Manutenção de Ginásios',
+  description = 'Venda, montagem, calibração e manutenção de equipamento de ginásio em Coimbra. Consultoria de layout e viabilidade para novos ginásios, boxes de CrossFit e hotéis.',
+} = Astro.props;
+
+// Garante que os caminhos para /public respeitam o "base" definido em
+// astro.config.mjs (necessário para o GitHub Pages em repositórios de projeto).
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const logoSrc = `${base}/img/logo.jpg`;
+---
+
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href={logoSrc} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0b0c" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={logoSrc} />
+    <meta property="og:locale" content="pt_PT" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

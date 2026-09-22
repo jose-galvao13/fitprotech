@@ -1,0 +1,167 @@
+---
+const produtos = [
+  {
+    titulo: 'Equipamento completo por encomenda',
+    texto:
+      'Pacotes de máquinas de musculação, cardio e estações funcionais para novos ginásios, hotéis, boxes de CrossFit ou empresas.',
+  },
+  {
+    titulo: 'Kits de substituição e peças',
+    texto:
+      'Cabos cortados à medida com terminais prensados, estofos personalizados com o logótipo do seu espaço e roldanas técnicas de reposição.',
+  },
+];
+
+const servicos = [
+  {
+    titulo: 'Consultoria de local e viabilidade',
+    texto:
+      'Análise técnica do espaço — área útil, resistência do piso ao impacto, pé-direito, acessos e ventilação — para validar se o imóvel serve para abrir um ginásio.',
+  },
+  {
+    titulo: 'Consultoria de layout e mix de máquinas',
+    texto:
+      'Plano 2D/3D do ginásio para otimizar o espaço e definição do número ideal de máquinas de cardio vs. musculação, com base no público-alvo.',
+  },
+  {
+    titulo: 'Montagem e calibração',
+    texto:
+      'Transporte, montagem técnica, fixação ao solo, passagem de cabos e calibração de segurança de todo o equipamento.',
+  },
+  {
+    titulo: 'Manutenção preventiva mensal',
+    texto:
+      'Avença mensal: lubrificação de guias, inspeção e substituição de cabos desgastados, alinhamento de tapetes e atualização de software das consolas.',
+  },
+];
+---
+
+<section class="oq" id="o-que-fazemos">
+  <div class="wrap">
+    <span class="olho">O QUE FAZEMOS</span>
+    <h2 class="oq__titulo">Da máquina certa à manutenção que a mantém segura.</h2>
+
+    <div class="oq__colunas">
+      <div class="oq__coluna">
+        <h3 class="oq__subtitulo">Produtos</h3>
+        <ul class="oq__lista">
+          {produtos.map((p) => (
+            <li>
+              <span class="oq__item-titulo">{p.titulo}</span>
+              <p>{p.texto}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="oq__coluna oq__coluna--destaque">
+        <h3 class="oq__subtitulo oq__subtitulo--claro">Serviços</h3>
+        <ul class="oq__lista oq__lista--clara">
+          {servicos.map((s) => (
+            <li>
+              <span class="oq__item-titulo">{s.titulo}</span>
+              <p>{s.texto}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .oq {
+    background: var(--osso);
+    padding: 96px 0;
+  }
+
+  @media (max-width: 600px) {
+    .oq {
+      padding: 56px 0;
+    }
+  }
+
+  .oq__titulo {
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    max-width: 20ch;
+    margin: 10px 0 56px;
+    color: var(--preto);
+  }
+
+  .oq__colunas {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 0;
+    border: 1px solid var(--aco);
+  }
+
+  .oq__coluna {
+    padding: 44px 40px;
+  }
+
+  .oq__coluna--destaque {
+    background: var(--preto);
+    border-left: 1px solid var(--aco);
+  }
+
+  .oq__subtitulo {
+    font-size: 1.5rem;
+    color: var(--vermelho);
+    margin-bottom: 26px;
+  }
+  .oq__subtitulo--claro {
+    color: var(--vermelho-luz);
+  }
+
+  .oq__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .oq__lista li {
+    padding-top: 22px;
+    border-top: 1px solid #d9d6cd;
+  }
+  .oq__lista li:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .oq__lista--clara li {
+    border-top: 1px solid var(--aco-linha);
+  }
+  .oq__lista--clara li:first-child {
+    border-top: none;
+  }
+
+  .oq__item-titulo {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+    color: var(--preto);
+  }
+  .oq__lista--clara .oq__item-titulo {
+    color: var(--osso);
+  }
+
+  .oq__lista p {
+    color: #4a4a4c;
+    font-size: 0.96rem;
+  }
+  .oq__lista--clara p {
+    color: var(--prata);
+  }
+
+  @media (max-width: 860px) {
+    .oq__colunas {
+      grid-template-columns: 1fr;
+    }
+    .oq__coluna--destaque {
+      border-left: none;
+      border-top: 1px solid var(--aco);
+    }
+  }
+</style>

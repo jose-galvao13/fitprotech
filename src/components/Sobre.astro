@@ -1,0 +1,158 @@
+---
+const materiais = [
+  'Cabos de aço trançados',
+  'Roldanas de alta densidade',
+  'Estofos e espumas anti-rasgo',
+  'Perfis de aço estrutural',
+  'Consolas digitais e sensores de carga',
+  'Motores de passadeira',
+];
+---
+
+<section class="sobre" id="sobre">
+  <div class="wrap sobre__grelha">
+    <div class="sobre__texto">
+      <span class="olho">SOBRE A FITPRO TECH</span>
+      <h2 class="sobre__titulo">Engenharia aplicada ao equipamento de ginásio.</h2>
+      <p>
+        A FITPRO TECH é uma empresa portuguesa, sediada em Coimbra, dedicada ao
+        comércio, montagem e manutenção de equipamento desportivo. Trabalhamos
+        com ginásios, boxes de CrossFit, hotéis e estúdios que precisam de um
+        parceiro técnico único — desde a escolha das máquinas até à
+        calibração de segurança e à manutenção contínua.
+      </p>
+      <p style="margin-top:16px;">
+        Sendo uma estrutura pequena e especializada, cada projeto tem um único
+        ponto de contacto técnico, do primeiro levantamento do espaço à
+        revisão mensal do equipamento instalado.
+      </p>
+    </div>
+
+    <div class="sobre__ficha" aria-label="Dados da empresa">
+      <div class="sobre__ficha-linha">
+        <span class="dado">DENOMINAÇÃO SOCIAL</span>
+        <strong>FITPRO TECH — Unipessoal, Lda.</strong>
+      </div>
+      <div class="sobre__ficha-linha">
+        <span class="dado">SEDE</span>
+        <strong>Eiras, Coimbra · 3020-430</strong>
+      </div>
+      <div class="sobre__ficha-linha">
+        <span class="dado">ESTRUTURA JURÍDICA</span>
+        <strong>Unipessoal por Quotas</strong>
+      </div>
+      <div class="sobre__ficha-linha">
+        <span class="dado">CAE PRINCIPAL</span>
+        <strong>46642 — Comércio por Grosso de Máquinas e Equipamentos</strong>
+      </div>
+      <div class="sobre__ficha-linha">
+        <span class="dado">CAE SECUNDÁRIOS</span>
+        <strong>3320 · 3319 · 7020</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap materiais">
+    <span class="olho">MATERIAIS E COMPONENTES QUE TRABALHAMOS</span>
+    <ul class="materiais__lista">
+      {materiais.map((m) => (
+        <li>{m}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .sobre {
+    background: var(--osso);
+    padding: 96px 0 0;
+  }
+
+  .sobre__grelha {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    padding-bottom: 80px;
+  }
+
+  .sobre__titulo {
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    margin: 8px 0 22px;
+    max-width: 16ch;
+    color: var(--preto);
+  }
+
+  .sobre__texto p {
+    color: #3a3a3c;
+  }
+
+  .sobre__ficha {
+    background: var(--preto);
+    padding: 34px;
+    align-self: start;
+    border-left: 4px solid var(--vermelho);
+  }
+
+  .sobre__ficha-linha {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--aco-linha);
+  }
+  .sobre__ficha-linha:first-child {
+    padding-top: 0;
+  }
+  .sobre__ficha-linha:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .sobre__ficha-linha .dado {
+    color: var(--aco);
+  }
+  .sobre__ficha-linha strong {
+    font-family: var(--f-corpo);
+    font-weight: 500;
+    color: var(--osso);
+    font-size: 0.98rem;
+  }
+
+  .materiais {
+    border-top: 1px solid #d9d6cd;
+    padding: 40px 24px 96px;
+  }
+
+  .materiais__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 14px;
+    margin-top: 18px;
+  }
+
+  .materiais__lista li {
+    font-family: var(--f-tecnico);
+    font-size: 0.82rem;
+    color: var(--preto);
+    border: 1px solid var(--aco);
+    padding: 8px 14px;
+  }
+
+  @media (max-width: 860px) {
+    .sobre__grelha {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .sobre {
+      padding-top: 64px;
+    }
+    .sobre__grelha {
+      padding-bottom: 56px;
+    }
+    .materiais {
+      padding: 32px 24px 64px;
+    }
+  }
+</style>

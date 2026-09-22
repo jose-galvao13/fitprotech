@@ -1,0 +1,245 @@
+---
+---
+<section class="contacto" id="contacto">
+  <div class="wrap contacto__grelha">
+    <div class="contacto__info">
+      <span class="olho olho--claro">CONTACTO</span>
+      <h2 class="contacto__titulo">Vamos falar sobre o seu espaço.</h2>
+      <p class="contacto__texto">
+        Descreva o seu projeto ou o equipamento que precisa de manutenção —
+        respondemos dentro do horário de funcionamento.
+      </p>
+
+      <ul class="contacto__lista">
+        <li>
+          <span class="dado">TELEFONE</span>
+          <a href="tel:+351239810450">+351 239 810 450</a>
+        </li>
+        <li>
+          <span class="dado">EMAIL</span>
+          <a href="mailto:fitprotech.geral@gmail.com">fitprotech.geral@gmail.com</a>
+        </li>
+        <li>
+          <span class="dado">MORADA</span>
+          <span>Eiras, 3020-430 Coimbra</span>
+        </li>
+        <li>
+          <span class="dado">HORÁRIO</span>
+          <span>Segunda a sexta, 09:00–13:00 e 14:00–18:00</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contacto__form" id="form-contacto">
+      <input type="hidden" name="access_key" value="a58d9242-c6f2-4b2c-b0d6-d97b6facb6e9" />
+      <input type="hidden" name="subject" value="Novo contacto — site FITPRO TECH" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="name" required />
+      </div>
+
+      <div class="campo-linha">
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" />
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto">
+          <option>Orçamento de equipamento</option>
+          <option>Consultoria de novo espaço</option>
+          <option>Contrato de manutenção</option>
+          <option>Outro assunto</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="botao botao--principal">Enviar mensagem</button>
+
+      <p class="contacto__estado" id="estado-form" role="status"></p>
+
+      <p class="contacto__alt">
+        Prefere não usar o formulário? Escreva para {' '}
+        <a href="mailto:fitprotech.geral@gmail.com">fitprotech.geral@gmail.com</a>.
+      </p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contacto {
+    background: var(--preto);
+    color: var(--osso);
+    padding: 96px 0;
+  }
+
+  .contacto__grelha {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+
+  .contacto__titulo {
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    margin: 10px 0 20px;
+    max-width: 16ch;
+  }
+
+  .contacto__texto {
+    color: var(--prata);
+    margin-bottom: 40px;
+  }
+
+  .contacto__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contacto__lista li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .contacto__lista .dado {
+    color: var(--aco);
+  }
+  .contacto__lista a,
+  .contacto__lista span:last-child {
+    font-size: 1rem;
+    color: var(--osso);
+  }
+  .contacto__lista a:hover {
+    color: var(--vermelho-luz);
+  }
+
+  .contacto__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .campo-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  label {
+    font-family: var(--f-tecnico);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--prata);
+  }
+
+  input,
+  select,
+  textarea {
+    background: var(--painel);
+    border: 1px solid var(--aco);
+    color: var(--osso);
+    padding: 12px 14px;
+    font-family: var(--f-corpo);
+    font-size: 0.96rem;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--vermelho);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .contacto__form .botao {
+    align-self: flex-start;
+    margin-top: 6px;
+  }
+
+  .contacto__estado {
+    font-family: var(--f-tecnico);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    color: var(--vermelho-luz);
+  }
+
+  .contacto__alt {
+    color: var(--aco);
+    font-size: 0.85rem;
+  }
+  .contacto__alt a {
+    color: var(--prata);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 860px) {
+    .contacto__grelha {
+      grid-template-columns: 1fr;
+    }
+    .campo-linha {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contacto {
+      padding: 56px 0;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('form-contacto');
+  const estado = document.getElementById('estado-form');
+
+  form?.addEventListener('submit', async (evento) => {
+    evento.preventDefault();
+    if (!estado) return;
+
+    const chave = form.elements.namedItem('access_key')?.value;
+    if (!chave || chave.startsWith('COLOQUE_AQUI')) {
+      estado.textContent =
+        'Formulário ainda não configurado. Envie diretamente para fitprotech.geral@gmail.com.';
+      return;
+    }
+
+    estado.textContent = 'A enviar...';
+    const dados = new FormData(form);
+
+    try {
+      const resposta = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: dados,
+      });
+      const json = await resposta.json();
+      if (json.success) {
+        estado.textContent = 'Mensagem enviada. Entraremos em contacto brevemente.';
+        form.reset();
+      } else {
+        estado.textContent = 'Não foi possível enviar. Tente por email.';
+      }
+    } catch {
+      estado.textContent = 'Não foi possível enviar. Tente por email.';
+    }
+  });
+</script>

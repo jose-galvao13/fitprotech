@@ -1,0 +1,184 @@
+@import '@fontsource/barlow-condensed/600.css';
+@import '@fontsource/barlow-condensed/700.css';
+@import '@fontsource/barlow-condensed/800.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+:root {
+  /* --- Paleta (extraída do logótipo FITPRO TECH) --- */
+  --preto: #0b0b0c;
+  --painel: #17171a;
+  --painel-2: #1f2023;
+  --aco: #4b4e54;
+  --aco-linha: #34363a;
+  --prata: #c9cdd1;
+  --osso: #f3f2ee;
+  --osso-2: #e9e7e1;
+  --vermelho: #c41e2e;
+  --vermelho-escuro: #8c1420;
+  --vermelho-luz: #e23a4a;
+
+  /* --- Tipografia --- */
+  --f-display: 'Barlow Condensed', sans-serif;
+  --f-corpo: 'IBM Plex Sans', sans-serif;
+  --f-tecnico: 'IBM Plex Mono', monospace;
+
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--f-corpo);
+  color: var(--preto);
+  background: var(--osso);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0;
+  max-width: 62ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.dado {
+  font-family: var(--f-tecnico);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--aco);
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--f-corpo);
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao--principal {
+  background: var(--vermelho);
+  color: var(--osso);
+}
+.botao--principal:hover {
+  background: var(--vermelho-luz);
+}
+
+.botao--fantasma {
+  border-color: var(--aco);
+  color: var(--preto);
+}
+.botao--fantasma:hover {
+  border-color: var(--preto);
+  background: var(--preto);
+  color: var(--osso);
+}
+
+.botao--fantasma-claro {
+  border-color: var(--aco);
+  color: var(--osso);
+}
+.botao--fantasma-claro:hover {
+  border-color: var(--osso);
+  background: var(--osso);
+  color: var(--preto);
+}
+
+.secao {
+  padding: 96px 0;
+}
+
+@media (max-width: 720px) {
+  .secao {
+    padding: 64px 0;
+  }
+}
+
+.olho {
+  font-family: var(--f-tecnico);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--vermelho);
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* Sobre fundo escuro, o vermelho de marca perde contraste em texto pequeno;
+   esta variante mais clara mantém a legibilidade (AA). */
+.olho--claro {
+  color: var(--vermelho-luz);
+}
+
+:focus-visible {
+  outline: 3px solid var(--vermelho);
+  outline-offset: 2px;
+}

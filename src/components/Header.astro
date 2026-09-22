@@ -1,0 +1,179 @@
+---
+const links = [
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#o-que-fazemos', label: 'O que fazemos' },
+  { href: '#como-trabalhamos', label: 'Como trabalhamos' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header class="header" id="topo">
+  <div class="wrap header__linha">
+    <a href="#topo" class="header__marca" aria-label="FITPRO TECH — início">
+      <svg class="header__chevron" viewBox="0 0 40 40" aria-hidden="true">
+        <polygon points="0,4 16,20 0,36 8,36 24,20 8,4" fill="#c41e2e" />
+        <polygon points="14,4 30,20 14,36 22,36 38,20 22,4" fill="#c9cdd1" />
+      </svg>
+      <span class="header__texto">
+        <strong>FITPRO</strong>&nbsp;TECH
+      </span>
+    </a>
+
+    <nav class="header__nav" aria-label="Navegação principal">
+      <ul>
+        {links.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <a href="#contacto" class="botao botao--principal header__cta">Pedir orçamento</a>
+
+    <button class="header__burger" id="burger" aria-expanded="false" aria-controls="menu-movel" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="header__movel" id="menu-movel">
+    <ul>
+      {links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+      <li><a href="#contacto" class="botao botao--principal">Pedir orçamento</a></li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--preto);
+    border-bottom: 1px solid var(--aco-linha);
+  }
+
+  .header__linha {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 76px;
+  }
+
+  .header__marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .header__chevron {
+    width: 26px;
+    height: 26px;
+  }
+
+  .header__texto {
+    font-family: var(--f-display);
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+    color: var(--osso);
+  }
+  .header__texto strong {
+    color: var(--osso);
+    font-weight: 800;
+  }
+
+  .header__nav {
+    flex: 1;
+  }
+  .header__nav ul {
+    display: flex;
+    gap: 30px;
+  }
+  .header__nav a {
+    font-size: 0.95rem;
+    color: var(--prata);
+    font-weight: 500;
+    transition: color 0.15s ease;
+    position: relative;
+  }
+  .header__nav a:hover {
+    color: var(--osso);
+  }
+
+  .header__cta {
+    padding: 11px 22px;
+    font-size: 0.9rem;
+  }
+
+  .header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px;
+    height: 34px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: auto;
+  }
+  .header__burger span {
+    display: block;
+    height: 2px;
+    background: var(--osso);
+    width: 100%;
+  }
+
+  .header__movel {
+    display: none;
+    background: var(--painel);
+    border-top: 1px solid var(--aco-linha);
+  }
+  .header__movel ul {
+    padding: 18px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .header__movel a {
+    color: var(--osso);
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+  .header__movel .botao {
+    margin-top: 6px;
+    width: fit-content;
+  }
+
+  .header__movel.aberto {
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .header__nav,
+    .header__cta {
+      display: none;
+    }
+    .header__burger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu-movel');
+
+  burger?.addEventListener('click', () => {
+    const aberto = menu?.classList.toggle('aberto');
+    burger.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+  });
+
+  menu?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      menu.classList.remove('aberto');
+      burger?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

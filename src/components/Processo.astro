@@ -1,0 +1,127 @@
+---
+const passos = [
+  {
+    numero: '01',
+    titulo: 'Consultoria e viabilidade',
+    texto: 'Visitamos o espaço e avaliamos piso, pé-direito, acessos e ventilação.',
+  },
+  {
+    numero: '02',
+    titulo: 'Layout e mix de máquinas',
+    texto: 'Desenhamos o plano 2D/3D e definimos o equipamento ideal para o seu público.',
+  },
+  {
+    numero: '03',
+    titulo: 'Montagem e calibração',
+    texto: 'Transportamos, montamos, fixamos ao solo e calibramos cada máquina.',
+  },
+  {
+    numero: '04',
+    titulo: 'Manutenção mensal',
+    texto: 'Avença recorrente: lubrificação, inspeção de cabos e revisão das consolas.',
+  },
+];
+---
+
+<section class="proc" id="como-trabalhamos">
+  <div class="wrap">
+    <span class="olho olho--claro">COMO TRABALHAMOS</span>
+    <h2 class="proc__titulo">Um fluxo contínuo, do primeiro contacto à revisão mensal.</h2>
+
+    <ol class="proc__linha">
+      {passos.map((p, i) => (
+        <li>
+          <span class="proc__numero">{p.numero}</span>
+          <h3>{p.titulo}</h3>
+          <p>{p.texto}</p>
+          {i < passos.length - 1 && <span class="proc__seta" aria-hidden="true">→</span>}
+        </li>
+      ))}
+    </ol>
+
+    <p class="proc__nota">
+      Os passos 01–03 aplicam-se à abertura de um novo espaço ou renovação; o
+      passo 04 é um contrato de avença mensal independente, disponível também
+      para equipamento já instalado por outros fornecedores.
+    </p>
+  </div>
+</section>
+
+<style>
+  .proc {
+    background: var(--preto);
+    color: var(--osso);
+    padding: 96px 0;
+  }
+
+  .proc__titulo {
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    max-width: 22ch;
+    margin: 10px 0 60px;
+  }
+
+  .proc__linha {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 0;
+  }
+
+  .proc__linha li {
+    position: relative;
+    padding: 0 28px 0 0;
+    border-top: 3px solid var(--vermelho);
+    padding-top: 22px;
+  }
+
+  .proc__numero {
+    display: block;
+    font-family: var(--f-tecnico);
+    font-size: 0.85rem;
+    color: var(--aco);
+    margin-bottom: 14px;
+  }
+
+  .proc__linha h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+  }
+
+  .proc__linha p {
+    color: var(--prata);
+    font-size: 0.92rem;
+  }
+
+  .proc__seta {
+    position: absolute;
+    top: 18px;
+    right: -6px;
+    color: var(--aco);
+    font-size: 1.1rem;
+  }
+
+  .proc__nota {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--aco-linha);
+    color: var(--aco);
+    font-size: 0.88rem;
+    max-width: 70ch;
+  }
+
+  @media (max-width: 860px) {
+    .proc__linha {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .proc__seta {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .proc {
+      padding: 56px 0;
+    }
+  }
+</style>

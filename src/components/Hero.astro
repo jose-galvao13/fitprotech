@@ -1,0 +1,135 @@
+---
+---
+<section class="hero">
+  <div class="hero__grelha" aria-hidden="true"></div>
+
+  <svg class="hero__chevron" viewBox="0 0 600 800" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,0 260,400 0,800 160,800 420,400 160,0" fill="#c41e2e" opacity="0.9" />
+    <polygon points="180,0 440,400 180,800 300,800 560,400 300,0" fill="#2a2b2f" opacity="0.85" />
+  </svg>
+
+  <div class="wrap hero__conteudo">
+    <span class="olho olho--claro">GYM ENGINEERING &amp; MAINTENANCE SOLUTIONS · COIMBRA</span>
+    <h1 class="hero__titulo">
+      Equipamento de ginásio<br />
+      que aguenta o ritmo<br />
+      do seu negócio.
+    </h1>
+    <p class="hero__texto">
+      Fornecemos, montamos, calibramos e mantemos o equipamento do seu ginásio,
+      box de CrossFit ou hotel — do estudo de viabilidade do espaço à
+      manutenção mensal que evita paragens.
+    </p>
+
+    <div class="hero__acoes">
+      <a href="#contacto" class="botao botao--principal">Pedir orçamento</a>
+      <a href="#o-que-fazemos" class="botao botao--fantasma-claro">Ver serviços</a>
+    </div>
+
+    <dl class="hero__ficha">
+      <div>
+        <dt>Sede</dt>
+        <dd>Coimbra, Portugal</dd>
+      </div>
+      <div>
+        <dt>Constituída em</dt>
+        <dd>Novembro 2026</dd>
+      </div>
+      <div>
+        <dt>Atividade</dt>
+        <dd>CAE 46642 · 3320 · 3319 · 7020</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background: var(--preto);
+    color: var(--osso);
+    overflow: hidden;
+    padding: 64px 0 0;
+  }
+
+  .hero__grelha {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--aco-linha) 1px, transparent 1px),
+      linear-gradient(90deg, var(--aco-linha) 1px, transparent 1px);
+    background-size: 44px 44px;
+    opacity: 0.28;
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+  }
+
+  .hero__chevron {
+    position: absolute;
+    top: 0;
+    right: -60px;
+    height: 100%;
+    width: 46%;
+    z-index: 0;
+  }
+
+  .hero__conteudo {
+    position: relative;
+    z-index: 1;
+    padding-top: 56px;
+    padding-bottom: 90px;
+    max-width: 720px;
+  }
+
+  .hero__titulo {
+    font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+    margin: 6px 0 26px;
+    max-width: 14ch;
+  }
+
+  .hero__texto {
+    color: var(--prata);
+    font-size: 1.08rem;
+    max-width: 46ch;
+  }
+
+  .hero__acoes {
+    display: flex;
+    gap: 16px;
+    margin-top: 38px;
+    flex-wrap: wrap;
+  }
+
+  .hero__ficha {
+    display: flex;
+    gap: 40px;
+    margin-top: 76px;
+    padding-top: 22px;
+    border-top: 1px solid var(--aco-linha);
+    flex-wrap: wrap;
+  }
+
+  .hero__ficha dt {
+    font-family: var(--f-tecnico);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--aco);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .hero__ficha dd {
+    margin: 0;
+    font-family: var(--f-tecnico);
+    font-size: 0.86rem;
+    color: var(--prata);
+  }
+
+  @media (max-width: 720px) {
+    .hero__chevron {
+      width: 70%;
+      opacity: 0.55;
+    }
+    .hero__ficha {
+      gap: 28px;
+    }
+  }
+</style>
