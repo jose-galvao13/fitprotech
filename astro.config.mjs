@@ -15,6 +15,6 @@ import { defineConfig } from 'astro/config';
 //   base: '/',
 
 export default defineConfig({
-site: 'https://fitprotech.pt',
-base: '/',
+  site: 'https://jose-galvao13.github.io',
+  base: '/fitprotech', 
 });
