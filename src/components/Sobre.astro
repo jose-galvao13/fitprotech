@@ -11,8 +11,10 @@ import empresa from '../../public/img/empresa.jpg';
 ---
 
 <section class="sobre" id="sobre">
-  <div class="wrap sobre__grelha">
-    <div class="sobre__texto">
+  <div class="sobre__hero">
+    <img class="sobre__foto" src={empresa.src} alt="Instalações e equipa da FitPro Tech em Coimbra" loading="lazy" />
+    <div class="sobre__overlay"></div>
+    <div class="wrap sobre__texto">
       <span class="olho">SOBRE A FITPRO TECH</span>
       <h2 class="sobre__titulo">Engenharia aplicada ao equipamento de ginásio.</h2>
       <p>
@@ -28,7 +30,6 @@ import empresa from '../../public/img/empresa.jpg';
         revisão mensal do equipamento instalado.
       </p>
     </div>
-<img class="sobre__foto" src={empresa.src} alt="Instalações e equipa da FitPro Tech em Coimbra" loading="lazy" />
   </div>
 
   <div class="wrap materiais">
@@ -47,19 +48,46 @@ import empresa from '../../public/img/empresa.jpg';
     padding: 96px 0 0;
   }
 
-  .sobre__grelha {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 64px;
-    padding-bottom: 80px;
-    align-items: stretch;
+  .sobre__hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 80px;
   }
 
   .sobre__foto {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 66% center;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .sobre__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(11, 11, 12, 0.95) 0%,
+      rgba(11, 11, 12, 0.88) 38%,
+      rgba(11, 11, 12, 0.5) 65%,
+      rgba(11, 11, 12, 0.12) 100%
+    );
+    z-index: 1;
+  }
+
+  .sobre__texto {
+    position: relative;
+    z-index: 2;
+    padding: 72px 24px;
+  }
+
+  .sobre__texto > * {
+    max-width: 46ch;
   }
 
   .sobre__titulo {
@@ -71,21 +99,6 @@ import empresa from '../../public/img/empresa.jpg';
 
   .sobre__texto p {
     color: var(--prata);
-  }
-
-  .sobre__imagem {
-    aspect-ratio: 1 / 1;
-    border: 1.5px dashed var(--aco);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--painel-2);
-  }
-
-  .sobre__imagem span {
-    font-family: var(--f-tecnico);
-    font-size: 0.78rem;
-    color: var(--aco);
   }
 
   .materiais {
@@ -109,9 +122,16 @@ import empresa from '../../public/img/empresa.jpg';
   }
 
   @media (max-width: 860px) {
-    .sobre__grelha {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    .sobre__overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(11, 11, 12, 0.55) 0%,
+        rgba(11, 11, 12, 0.92) 55%,
+        rgba(11, 11, 12, 0.97) 100%
+      );
+    }
+    .sobre__texto > * {
+      max-width: 100%;
     }
   }
 
@@ -119,8 +139,12 @@ import empresa from '../../public/img/empresa.jpg';
     .sobre {
       padding-top: 64px;
     }
-    .sobre__grelha {
-      padding-bottom: 56px;
+    .sobre__hero {
+      min-height: 520px;
+      margin-bottom: 56px;
+    }
+    .sobre__texto {
+      padding: 48px 24px;
     }
     .materiais {
       padding: 32px 24px 64px;
