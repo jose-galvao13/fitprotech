@@ -28,7 +28,7 @@ import empresa from '../../public/img/empresa.jpg';
         revisão mensal do equipamento instalado.
       </p>
     </div>
-<img src={empresa.src} alt="Instalações e equipa da FitPro Tech em Coimbra" loading="lazy" />
+<img class="sobre__foto" src={empresa.src} alt="Instalações e equipa da FitPro Tech em Coimbra" loading="lazy" />
   </div>
 
   <div class="wrap materiais">
@@ -52,7 +52,13 @@ import empresa from '../../public/img/empresa.jpg';
     grid-template-columns: 1.1fr 1fr;
     gap: 64px;
     padding-bottom: 80px;
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .sobre__foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .sobre__titulo {
