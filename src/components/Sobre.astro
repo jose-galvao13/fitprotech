@@ -7,6 +7,7 @@ const materiais = [
   'Consolas digitais e sensores de carga',
   'Motores de passadeira',
 ];
+import empresa from '../../public/img/empresa.jpg';
 ---
 
 <section class="sobre" id="sobre">
@@ -28,8 +29,8 @@ const materiais = [
       </p>
     </div>
 
-    <!-- PLACEHOLDER: substituir por uma foto real da empresa/equipa/instalações -->
-    <div class="sobre__imagem">
+<img src={empresa.src} alt="Instalações e equipa da FitPro Tech em Coimbra" loading="lazy" />
+<div class="sobre__imagem">
       <span>Foto da empresa</span>
     </div>
   </div>
